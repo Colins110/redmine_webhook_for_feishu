@@ -109,7 +109,6 @@ module RedmineWebhook
               \"content\":
                   [
                      [{\"tag\":\"text\",\"text\":\"主题: 📄#{issue.subject}\"}],
-                     [{\"tag\":\"text\",\"text\":\"描述: 📚#{issue.description}\"}],
                      [{\"tag\":\"text\",\"text\":\"由👤 #{issue.author.lastname}#{issue.author.firstname} 添加\"}],
                      [{\"tag\":\"text\",\"text\":\"指派给 👏#{issue.assigned_to.lastname}#{issue.assigned_to.firstname}\"}],
                      [{\"tag\":\"text\",\"text\":\"优先级: 📌#{issue.priority.name}\"}],
