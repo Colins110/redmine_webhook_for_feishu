@@ -7,12 +7,12 @@ else
 end
 
 Redmine::Plugin.register :redmine_webhook do
-  name 'Redmine Webhook plugin'
-  author 'suer'
-  description 'A Redmine plugin posts webhook on creating and updating tickets'
+  name 'Redmine Webhook plugin for FeiShu'
+  author 'colin'
+  description 'A Redmine plugin posts webhook to FeiShu on creating and updating tickets'
   version '0.0.5'
-  url 'https://github.com/suer/redmine_webhook'
-  author_url 'http://d.hatena.ne.jp/suer'
+  url 'https://github.com/Colins110/redmine_webhook_for_feishu'
+  author_url 'https://github.com/Colins110'
   project_module :webhooks do
     permission :manage_hook, {:webhook_settings => [:index, :show, :update, :create, :destroy]}, :require => :member
   end

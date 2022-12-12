@@ -3,12 +3,16 @@ class WebhookSettingsController < ApplicationController
   accept_api_auth :index, :create, :update, :destroy
 
   def index
-    render :json => Webhook.where(:project_id => @project.id).as_json(:only => [:id, :url])
+    render :json => Webhook.where(:project_id => @project.id).as_json(:only => [:id])
   end
 
   def create
     webhook = Webhook.new(:project_id => @project.id)
-    webhook.url = params[:url]
+    webhook.gettokenUrl = params[:gettokenUrl]
+    webhook.app_id = params[:app_id]
+    webhook.app_secret = params[:app_secret]
+    webhook.getidUrl = params[:getidUrl]
+    webhook.imUrl = params[:imUrl]
     if webhook.save
       flash[:notice] = l(:notice_successful_create_webhook)
     else
@@ -19,8 +23,12 @@ class WebhookSettingsController < ApplicationController
   def update
     id = params[:webhook_id]
     webhook = Webhook.where(:project_id => @project.id).where(:id => id).first
-    webhook.url = params[:url]
-    if webhook.url.blank? ? webhook.destroy : webhook.save
+    webhook.gettokenUrl = params[:gettokenUrl]
+    webhook.app_id = params[:app_id]
+    webhook.app_secret = params[:app_secret]
+    webhook.getidUrl = params[:getidUrl]
+    webhook.imUrl = params[:imUrl]
+    if webhook.gettokenUrl.blank? ? webhook.destroy : webhook.save
       flash[:notice] = l(:notice_successful_update_webhook)
     else
       flash[:error] = l(:notice_fail_update_webhook)
