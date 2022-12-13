@@ -5,6 +5,9 @@ A Redmine plugin posts webhook to feishu on creating and updating tickets.
 
 Thanks For [Redmine WebHook Plugin](https://github.com/suer/redmine_webhook)
 
+Auto Notice:
+![](picture/robot.png)
+
 Author
 ------------------------------
 * @colin
