@@ -17,7 +17,7 @@ Install
 Type below commands:
 
     $ cd $RAILS_ROOT/plugins
-    $ git clone https://github.com/Colins110/redmine_webhook_for_feishu.git
+    $ git clone https://github.com/Colins110/redmine_webhook_for_feishu.gitredmine_webhook
     $ bundle exec rake redmine:plugins:migrate NAME=redmine_webhook RAILS_ENV=production 
 
 Then, restart your redmine.
